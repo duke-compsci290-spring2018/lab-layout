@@ -1,93 +1,105 @@
 /* General Styles */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #ABCDEF;
+    /* make it so absolute positioning can line up at the top */
+    margin: 0 10px;
 }
 
 h1 {
+    text-align: right;
     color: darkblue;
-    text-align: center;
 }
 
 h2 {
-    color: #ABCDEF;
     text-align: center;
-    background-color: darkblue;
-    padding: 5px;
-}
-
-p {
-    color: maroon;
-}
-
-
-/* Page styles */
-footer, header {
-    text-align: center;
+    color: lime;
+    background-color: grey;
+    margin: 20px 20px auto;
     padding: 10px;
-    background-image: url("../images/brushed_metal.jpg");
+    border: 2px solid red;
+    /* trick to actually color the padding area */
+    box-shadow: 0 0 0 10px blue inset;
 }
 
-header {
-    border-bottom: 1px solid black;
-    border-radius: 32px 32px 0 0;
+h3 {
+    text-align: center;
 }
 
-footer {
-    border-top: 1px solid black;
-    border-radius: 0 0 32px 32px;
-}
-
-section {
+/* only select to p tags directly under the section tag */
+section > p {
+    color: red;
     padding: 5px;
-}
-
-#content {
-    background-color: #FFF;
-    /* alternate way to center element */
-    margin: auto;
-    width: 90%;
-    border-radius: 32px;
+    font-family: cursive;
 }
 
 
 /* Navigation bar */
+navbar {
+    /* this moves and sizes it reasonably */
+    position: absolute;
+    top: 0;
+}
+
 navbar ul {
     list-style-type: none;
-    overflow: hidden;
     margin: 0;
     padding: 0;
     background-color: #666;
 }
 
-navbar li {
-    float: left;
-}
-
-navbar li.last {
-    float: right;
-}
-
 navbar a {
-    color: #ABCDEF;
+    color: lime;
     display: block;
-    padding: 8px;
+    padding: 2px;
     margin: 2px;
     text-align: center;
     text-decoration: none;
 }
 
-/* Drinks list */
-.title {
-    font-weight: bold;
+/* Page styles */
+footer, header {
+    text-align: center;
+    background-color: bisque;
+    padding: 10px;
 }
 
-#columns img {
-    float: left;
-    height: 50px;
-    padding: 0 20px 0 0;
+footer {
+    text-align: right;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 10pt;
+}
+
+/* Drink Styles */
+#columns {
+    /* FlexBox is useful to ensure all columns are the same height. */
+    display: flex;
 }
 
 #columns li {
+    /* Do not need this in a flex environment. Works but does not expand block to fill the space */
+    /* display: inline-block; */
     list-style: none;
+    text-align: center;
+    background-color: #ffdf7f;
+    /* use percentages rather than fixed pixel sizes to be more flexible */
+    width: 20%;
+    padding: 1%;
+    margin: 0px 1%;
+}
+
+#columns .title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 5px 10px;
+}
+
+#columns img {
+    height: 200px;
+    display: block;
+    margin: auto;
 }
