@@ -1,0 +1,116 @@
+---
+---
+
+$fav-color: lime;
+$text-color: cyan;
+
+
+/* General Styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: $text-color;
+}
+
+h2 {
+    text-align: center;
+    color: $fav-color;
+    background-color: grey;
+    margin: 20px 20px auto;
+    padding: 10px;
+    border: 2px solid red;
+    /* trick to actually color the padding area */
+    box-shadow: 0 0 0 10px blue inset;
+}
+
+h3 {
+    text-align: center;
+}
+
+/* only select to p tags directly under the section tag */
+section > p {
+    color: red;
+    padding: 5px;
+    font-family: cursive;
+}
+
+
+/* Navigation bar */
+navbar {
+}
+
+navbar ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #666;
+}
+
+navbar li {
+    float: left;
+}
+
+navbar li.last {
+    float: right;
+}
+
+navbar a {
+    color: lime;
+    display: block;
+    padding: 8px;
+    margin: 2px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Page styles */
+footer, header {
+    text-align: center;
+    background-color: bisque;
+    padding: 10px;
+}
+
+footer {
+    text-align: right;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 10pt;
+}
+
+/* Drink Styles */
+#columns {
+    /* FlexBox is useful to ensure all columns are the same height. */
+    /*display: flex;*/
+}
+
+#columns li {
+    /* Do not need this in a flex environment. Works but does not expand block to fill the space */
+    /*display: inline-block;*/
+    list-style: none;
+    text-align: center;
+    background-color: #ffdf7f;
+    /* use percentages rather than fixed pixel sizes to be more flexible */
+    /*width: 20%;*/
+    padding: 1%;
+    /*margin: 0px 1%;*/
+}
+
+#columns .title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 5px 10px;
+}
+
+#columns img {
+    height: 200px;
+    display: block;
+    margin: auto;
+}
